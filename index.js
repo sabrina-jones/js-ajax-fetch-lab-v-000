@@ -8,6 +8,16 @@ function showIssues(json) {
 }
 
 function createIssue() {
+  const title = document.getElementById('title').value;
+  const body = document.getElementById('body').value;
+  const postData = {title: title, body: body};
+  fetch('https://api.github.com/repos/jingruzhang/javascript-fetch-lab/issues', {
+      method: 'post',
+      headers: {
+          Authorization: `token ${getToken()}`
+      },
+      body: JSON.stringify(postData)
+  }).then(res => getIssues())
 }
 
 function showResults(json) {
