@@ -1,4 +1,6 @@
 function getIssues() {
+  fetch('https://api.github.com/repos/jingruzhang/javascript-fetch-lab/issues').then(res => res.json().then(data =>
+        data.map(data => showIssues(data))))
 }
 
 function showIssues(json) {
