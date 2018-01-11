@@ -4,6 +4,7 @@ function getIssues() {
 }
 
 function showIssues(json) {
+  $('#results').append(`<li>Title: <a href="${json.url}">${json.title} </a><span> | Body: ${json.body}</span></li>`)
 }
 
 function createIssue() {
